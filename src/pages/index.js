@@ -1,20 +1,36 @@
 import React from "react"
-import { Link } from "gatsby"
+// import { Link } from "gatsby"
 
-import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
+import Layout from "../components/layout"
+// import Image from "../components/Image/image"
+import { faMugHot } from "@fortawesome/free-solid-svg-icons"
+
+import Card from "../components/Card"
+
+import { Wrapper, FontAwesome } from "./styles"
+
+const items = [
+  "1/2",
+  "1",
+  "2",
+  "3",
+  "5",
+  "8",
+  "13",
+  "20",
+  "40",
+  "100",
+  "?",
+  <FontAwesome icon={faMugHot} />,
+]
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
+    <SEO title="Planning Poker" />
+    <Wrapper>
+      <Card items={items} />
+    </Wrapper>
   </Layout>
 )
 
