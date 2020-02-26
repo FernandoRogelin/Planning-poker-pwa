@@ -6,7 +6,7 @@ import Layout from "../components/layout"
 // import Image from "../components/Image/image"
 import { faMugHot } from "@fortawesome/free-solid-svg-icons"
 
-import { Wrapper, FontAwesome } from "./styles"
+import { Wrapper, FontAwesome } from "../components/styles"
 
 const items = [
   "1/2",
