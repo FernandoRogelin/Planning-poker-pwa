@@ -1,12 +1,10 @@
-import React from "react"
-// import { Link } from "gatsby"
+import React, { useState } from "react"
 
 import SEO from "../components/seo"
+import Card from "../components/Card"
 import Layout from "../components/layout"
 // import Image from "../components/Image/image"
 import { faMugHot } from "@fortawesome/free-solid-svg-icons"
-
-import Card from "../components/Card"
 
 import { Wrapper, FontAwesome } from "./styles"
 
@@ -25,13 +23,25 @@ const items = [
   <FontAwesome icon={faMugHot} />,
 ]
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Planning Poker" />
-    <Wrapper>
-      <Card items={items} />
-    </Wrapper>
-  </Layout>
-)
+export default function IndexPage() {
+  const [value, setValue] = useState("")
+  const [list, setList] = useState(true)
 
-export default IndexPage
+  function valueClicked(item) {
+    list && setValue([item])
+    setList(!list)
+  }
+
+  return (
+    <Layout>
+      <SEO title="Planning Poker" />
+      <Wrapper>
+        {list ? (
+          <Card list={list} valueClicked={valueClicked} items={items} />
+        ) : (
+          <Card list={list} valueClicked={valueClicked} items={value} />
+        )}
+      </Wrapper>
+    </Layout>
+  )
+}
