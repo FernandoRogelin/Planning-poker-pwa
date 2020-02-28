@@ -13,7 +13,7 @@ export const Wrapper = styled.div`
     list &&
     css`
       padding: 30px;
-      align-item: center;
+      align-items: center;
     `};
 `
 
