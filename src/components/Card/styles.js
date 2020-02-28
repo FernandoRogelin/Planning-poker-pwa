@@ -1,4 +1,18 @@
-import styled, { css } from "styled-components/macro"
+import styled, { css, keyframes } from "styled-components/macro"
+
+const increase = keyframes`
+  from {
+    width: 60px;
+    height: 100px;
+    margin: 0 5px 5px 0;
+  }
+
+  to {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+`
 
 export const Content = styled.div`
   width: 100px;
@@ -14,8 +28,8 @@ export const Content = styled.div`
   ${({ list }) =>
     list &&
     css`
-      width: 100%;
-      height: 100%;
+      animation: ${increase} 0.8s ease-in;
+      animation-fill-mode: forwards;
     `};
 `
 
@@ -28,5 +42,6 @@ export const Number = styled.p`
     list &&
     css`
       font-size: 10rem;
+      transition: font-size 0.8s ease-in;
     `}
 `

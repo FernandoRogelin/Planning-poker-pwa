@@ -35,7 +35,7 @@ export default function IndexPage() {
   return (
     <Layout>
       <SEO title="Planning Poker" />
-      <Wrapper>
+      <Wrapper list={list ? undefined : "true"}>
         {list ? (
           <Card list={list} valueClicked={valueClicked} items={items} />
         ) : (
